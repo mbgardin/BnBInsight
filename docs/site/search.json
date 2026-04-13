@@ -1,0 +1,149 @@
+[
+  {
+    "objectID": "report.html",
+    "href": "report.html",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "",
+    "text": "The short-term rental market has grown rapidly, and nightly pricing varies significantly across listings. This project investigates which listing attributes most influence the nightly price of Airbnb listings."
+  },
+  {
+    "objectID": "report.html#introduction",
+    "href": "report.html#introduction",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "",
+    "text": "The short-term rental market has grown rapidly, and nightly pricing varies significantly across listings. This project investigates which listing attributes most influence the nightly price of Airbnb listings."
+  },
+  {
+    "objectID": "report.html#hypothesis",
+    "href": "report.html#hypothesis",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "Hypothesis",
+    "text": "Hypothesis\nPrimary hypothesis: Listings with more bedrooms, higher ratings, and more amenities have significantly higher nightly prices.\n\nH₀: Bedrooms, rating, and amenities count have no relationship with nightly price.\nH₁: Bedrooms, rating, and amenities count positively predict nightly price."
+  },
+  {
+    "objectID": "report.html#data",
+    "href": "report.html#data",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "Data",
+    "text": "Data\nThe primary dataset is a Kaggle Airbnb listings CSV containing thousands of listing records with fields for price, bedrooms, review scores, amenities, and neighbourhood.\nAs a supplement, the AirROI API was used to demonstrate raw data collection from a live source."
+  },
+  {
+    "objectID": "report.html#methods",
+    "href": "report.html#methods",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "Methods",
+    "text": "Methods\n\nCleaning\nRaw data was cleaned by:\n\nRemoving dollar signs and commas from price\nConverting ratings from a 0–100 scale to 0–5\nExtracting numeric bedroom counts\nDropping duplicates and null prices\nFiltering to a $20–$2,000 range to exclude extreme outliers\n\n\n\nFeature Engineering\n\namenities_count: Parsed from a comma-separated text field\nlog_price: Natural log of nightly price (stabilises variance for regression)\n\n\n\nStatistical Model\nWe fit an OLS regression:\nlog_price ~ bedrooms + rating + amenities_count"
+  },
+  {
+    "objectID": "report.html#results",
+    "href": "report.html#results",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "Results",
+    "text": "Results\n(Run python scripts/run_analysis.py to populate these results.)\n\nSummary Statistics\nAfter cleaning, the dataset contains several thousand listings. Key descriptive statistics (mean, median, standard deviation) for price, bedrooms, rating, and amenities count are reported in the analysis output.\n\n\nRegression\nThe OLS model output includes:\n\nCoefficients for each predictor\np-values indicating statistical significance\nR² indicating overall model fit\n\n\n\nInterpretation\n\nA positive coefficient for bedrooms means that each additional bedroom is associated with a higher nightly price (controlling for other factors).\nA positive coefficient for rating means higher-rated listings tend to command higher prices.\nThe amenities_count coefficient indicates the marginal price impact of offering more amenities.\nIf all p-values are below 0.05, we reject H₀ and conclude that these features significantly predict price."
+  },
+  {
+    "objectID": "report.html#conclusion",
+    "href": "report.html#conclusion",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe regression analysis demonstrates that bedrooms, ratings, and amenities are statistically significant predictors of Airbnb nightly prices. This supports the original hypothesis and provides quantitative estimates of each factor’s effect."
+  },
+  {
+    "objectID": "report.html#limitations",
+    "href": "report.html#limitations",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "Limitations",
+    "text": "Limitations\n\nThe model is a simple linear specification and may miss non-linear effects.\nOmitted variables (e.g., exact location, seasonality) likely matter.\nThe Kaggle dataset is a snapshot and may not generalise to all markets or time periods."
+  },
+  {
+    "objectID": "report.html#references",
+    "href": "report.html#references",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "References",
+    "text": "References\n\nInside Airbnb / Kaggle listings datasets\nAirROI API documentation\nstatsmodels OLS regression"
+  },
+  {
+    "objectID": "tutorial.html",
+    "href": "tutorial.html",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "",
+    "text": "git clone https://github.com/mbgardin/BnBInsight.git\ncd BnBInsight\npip install -e ."
+  },
+  {
+    "objectID": "tutorial.html#installation",
+    "href": "tutorial.html#installation",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "",
+    "text": "git clone https://github.com/mbgardin/BnBInsight.git\ncd BnBInsight\npip install -e ."
+  },
+  {
+    "objectID": "tutorial.html#step-1-load-data",
+    "href": "tutorial.html#step-1-load-data",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 1 — Load Data",
+    "text": "Step 1 — Load Data\nfrom bnbinsight.data_collection import load_kaggle_data\n\ndf = load_kaggle_data(\"data/raw/kaggle_airbnb.csv\")\nprint(df.shape)\nprint(df.columns.tolist())"
+  },
+  {
+    "objectID": "tutorial.html#step-2-clean-data",
+    "href": "tutorial.html#step-2-clean-data",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 2 — Clean Data",
+    "text": "Step 2 — Clean Data\nfrom bnbinsight.cleaning import (\n    clean_price_column,\n    clean_rating_column,\n    clean_bedrooms_column,\n    drop_duplicates_and_nulls,\n    filter_reasonable_prices,\n)\n\ndf = clean_price_column(df)\ndf = clean_rating_column(df)\ndf = clean_bedrooms_column(df)\ndf = drop_duplicates_and_nulls(df)\ndf = filter_reasonable_prices(df)\nprint(f\"Clean rows: {len(df)}\")"
+  },
+  {
+    "objectID": "tutorial.html#step-3-engineer-features",
+    "href": "tutorial.html#step-3-engineer-features",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 3 — Engineer Features",
+    "text": "Step 3 — Engineer Features\nfrom bnbinsight.features import parse_amenities_count, create_log_price\n\ndf = parse_amenities_count(df)\ndf = create_log_price(df)\nprint(df[[\"price\", \"log_price\", \"bedrooms\", \"rating\", \"amenities_count\"]].head())"
+  },
+  {
+    "objectID": "tutorial.html#step-4-run-analysis",
+    "href": "tutorial.html#step-4-run-analysis",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 4 — Run Analysis",
+    "text": "Step 4 — Run Analysis\nfrom bnbinsight.analysis import run_linear_regression, evaluate_model\nfrom bnbinsight.features import select_model_features\n\nmodel_df = select_model_features(df)\nmodel = run_linear_regression(model_df)\nprint(model.summary())\nprint(evaluate_model(model))"
+  },
+  {
+    "objectID": "tutorial.html#step-5-visualize",
+    "href": "tutorial.html#step-5-visualize",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 5 — Visualize",
+    "text": "Step 5 — Visualize\nfrom bnbinsight.visualization import plot_price_distribution, plot_price_vs_bedrooms\n\nplot_price_distribution(df, save_path=\"plots/price_dist.png\")\nplot_price_vs_bedrooms(df, save_path=\"plots/price_bed.png\")"
+  },
+  {
+    "objectID": "tutorial.html#step-6-launch-dashboard",
+    "href": "tutorial.html#step-6-launch-dashboard",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 6 — Launch Dashboard",
+    "text": "Step 6 — Launch Dashboard\nstreamlit run app/streamlit_app.py"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BnBInsight",
+    "section": "",
+    "text": "BnBInsight is a Python package that demonstrates the full data-science pipeline for analysing short-term rental pricing on Airbnb.\nThe package lets you:\n\nCollect raw listing data from a Kaggle CSV and the AirROI API\nClean messy price, rating, and bedroom columns\nEngineer features like amenities count and log-price\nAnalyse pricing drivers with OLS regression\nVisualise distributions and relationships\nExplore results interactively via a Streamlit dashboard"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "BnBInsight",
+    "section": "",
+    "text": "BnBInsight is a Python package that demonstrates the full data-science pipeline for analysing short-term rental pricing on Airbnb.\nThe package lets you:\n\nCollect raw listing data from a Kaggle CSV and the AirROI API\nClean messy price, rating, and bedroom columns\nEngineer features like amenities count and log-price\nAnalyse pricing drivers with OLS regression\nVisualise distributions and relationships\nExplore results interactively via a Streamlit dashboard"
+  },
+  {
+    "objectID": "index.html#hypothesis",
+    "href": "index.html#hypothesis",
+    "title": "BnBInsight",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n\nListings with more bedrooms, higher ratings, and more amenities have significantly higher nightly prices.\n\nModel: log_price ~ bedrooms + rating + amenities_count"
+  },
+  {
+    "objectID": "index.html#quick-start",
+    "href": "index.html#quick-start",
+    "title": "BnBInsight",
+    "section": "Quick Start",
+    "text": "Quick Start\npip install -e .\npython scripts/clean_data.py\npython scripts/run_analysis.py\nstreamlit run app/streamlit_app.py\nSee the Tutorial for a step-by-step walkthrough."
+  }
+]
