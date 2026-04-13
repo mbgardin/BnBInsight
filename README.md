@@ -30,8 +30,8 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/airbnb-pricing-project.git
-cd airbnb-pricing-project
+git clone https://github.com/mbgardin/BnBInsight.git
+cd BnBInsight
 
 # Install dependencies
 pip install -r requirements.txt
