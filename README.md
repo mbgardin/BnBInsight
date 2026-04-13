@@ -47,7 +47,7 @@ pip install -e .
 ```
 airbnb-pricing-project/
 ├── src/bnbinsight/        # Core package modules
-│   ├── data_collection.py # Load Kaggle CSV & fetch AirROI API
+│   ├── data_collectionls.py # Load Kaggle CSV & fetch AirROI API
 │   ├── cleaning.py        # Clean price, rating, bedrooms, etc.
 │   ├── features.py        # Amenity count, log price, feature selection
 │   ├── analysis.py        # Summary stats, OLS regression, flagging

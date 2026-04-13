@@ -472,7 +472,7 @@ with tab3:
 # ---------------------------------------------------------------------------
 st.divider()
 st.caption(
-    "Built with [BnBInsight](https://github.com/) · "
+    "Built with [BnBInsight](https://github.com/) by Monte Gardiner and Nandintsetseg Batsaikhan · "
     "Data: Kaggle Airbnb + AirROI API · "
     f"Dataset: {len(df):,} listings"
 )

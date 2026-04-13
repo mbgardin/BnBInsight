@@ -32,3 +32,6 @@ docs/.quarto/
 
 # Plots
 plots/
+
+/.quarto/
+**/*.quarto_ipynb
