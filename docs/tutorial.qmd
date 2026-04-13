@@ -5,8 +5,8 @@ title: "Tutorial — Using BnBInsight"
 ## Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/airbnb-pricing-project.git
-cd airbnb-pricing-project
+git clone https://github.com/mbgardin/BnBInsight.git
+cd BnBInsight
 pip install -e .
 ```
 
