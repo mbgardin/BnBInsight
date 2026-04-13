@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+
+# Data (keep raw data in repo, ignore generated processed files)
+# data/raw/ files are tracked so API doesn't need re-calling
+data/processed/*.csv
+
+# Quarto
+docs/_site/
+docs/.quarto/
+
+# Plots
+plots/

@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "BnBInsight"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: tutorial.qmd
+        text: Tutorial
+      - href: report.qmd
+        text: Report
+
+format:
+  html:
+    theme: cosmo
+    toc: true
