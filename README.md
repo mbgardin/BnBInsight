@@ -4,7 +4,7 @@
 
 ---
 
-## 🔬 Hypothesis
+## Hypothesis
 
 **Primary hypothesis:** Listings with more bedrooms, higher ratings, and more amenities have significantly higher nightly prices.
 
