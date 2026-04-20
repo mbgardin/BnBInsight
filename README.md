@@ -114,7 +114,8 @@ python -m pytest tests/
 
 ## Documentation
 
-Full documentation (built with Quarto) is available on GitHub Pages:
+Full documentation (built with Quarto) is available on GitHub Pages, as well as the hosted streamlit app:
+**[https://bnbinsight.streamlit.app/](https://bnbinsight.streamlit.app/)**
 
 **[https://mbgardin.github.io/BnBInsight/](https://mbgardin.github.io/BnBInsight/)**
 
