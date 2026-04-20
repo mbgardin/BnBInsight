@@ -1,89 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "BnBInsight",
-    "section": "",
-    "text": "BnBInsight is a Python package that demonstrates the full data-science pipeline for analysing short-term rental pricing on Airbnb.\nThe package lets you:\n\nCollect raw listing data from a Kaggle CSV and the AirROI API\nClean messy price, rating, and bedroom columns\nEngineer features like amenities count and log-price\nAnalyse pricing drivers with OLS regression\nVisualise distributions and relationships\nExplore results interactively via a Streamlit dashboard"
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "BnBInsight",
-    "section": "",
-    "text": "BnBInsight is a Python package that demonstrates the full data-science pipeline for analysing short-term rental pricing on Airbnb.\nThe package lets you:\n\nCollect raw listing data from a Kaggle CSV and the AirROI API\nClean messy price, rating, and bedroom columns\nEngineer features like amenities count and log-price\nAnalyse pricing drivers with OLS regression\nVisualise distributions and relationships\nExplore results interactively via a Streamlit dashboard"
-  },
-  {
-    "objectID": "index.html#hypothesis",
-    "href": "index.html#hypothesis",
-    "title": "BnBInsight",
-    "section": "Hypothesis",
-    "text": "Hypothesis\n\nListings with more bedrooms, higher ratings, and more amenities have significantly higher nightly prices.\n\nModel: log_price ~ bedrooms + rating + amenities_count"
-  },
-  {
-    "objectID": "index.html#quick-start",
-    "href": "index.html#quick-start",
-    "title": "BnBInsight",
-    "section": "Quick Start",
-    "text": "Quick Start\npip install -e .\npython scripts/clean_data.py\npython scripts/run_analysis.py\nstreamlit run app/streamlit_app.py\nSee the Tutorial for a step-by-step walkthrough."
-  },
-  {
-    "objectID": "tutorial.html",
-    "href": "tutorial.html",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "",
-    "text": "git clone https://github.com/mbgardin/BnBInsight.git\ncd BnBInsight\npip install -e ."
-  },
-  {
-    "objectID": "tutorial.html#installation",
-    "href": "tutorial.html#installation",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "",
-    "text": "git clone https://github.com/mbgardin/BnBInsight.git\ncd BnBInsight\npip install -e ."
-  },
-  {
-    "objectID": "tutorial.html#step-1-load-data",
-    "href": "tutorial.html#step-1-load-data",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "Step 1 — Load Data",
-    "text": "Step 1 — Load Data\nfrom bnbinsight.data_collection import load_kaggle_data\n\ndf = load_kaggle_data(\"data/raw/kaggle_airbnb.csv\")\nprint(df.shape)\nprint(df.columns.tolist())"
-  },
-  {
-    "objectID": "tutorial.html#step-2-clean-data",
-    "href": "tutorial.html#step-2-clean-data",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "Step 2 — Clean Data",
-    "text": "Step 2 — Clean Data\nfrom bnbinsight.cleaning import (\n    clean_price_column,\n    clean_rating_column,\n    clean_bedrooms_column,\n    drop_duplicates_and_nulls,\n    filter_reasonable_prices,\n)\n\ndf = clean_price_column(df)\ndf = clean_rating_column(df)\ndf = clean_bedrooms_column(df)\ndf = drop_duplicates_and_nulls(df)\ndf = filter_reasonable_prices(df)\nprint(f\"Clean rows: {len(df)}\")"
-  },
-  {
-    "objectID": "tutorial.html#step-3-engineer-features",
-    "href": "tutorial.html#step-3-engineer-features",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "Step 3 — Engineer Features",
-    "text": "Step 3 — Engineer Features\nfrom bnbinsight.features import parse_amenities_count, create_log_price\n\ndf = parse_amenities_count(df)\ndf = create_log_price(df)\nprint(df[[\"price\", \"log_price\", \"bedrooms\", \"rating\", \"amenities_count\"]].head())"
-  },
-  {
-    "objectID": "tutorial.html#step-4-run-analysis",
-    "href": "tutorial.html#step-4-run-analysis",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "Step 4 — Run Analysis",
-    "text": "Step 4 — Run Analysis\nfrom bnbinsight.analysis import run_linear_regression, evaluate_model\nfrom bnbinsight.features import select_model_features\n\nmodel_df = select_model_features(df)\nmodel = run_linear_regression(model_df)\nprint(model.summary())\nprint(evaluate_model(model))"
-  },
-  {
-    "objectID": "tutorial.html#step-5-visualize",
-    "href": "tutorial.html#step-5-visualize",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "Step 5 — Visualize",
-    "text": "Step 5 — Visualize\nfrom bnbinsight.visualization import plot_price_distribution, plot_price_vs_bedrooms\n\nplot_price_distribution(df, save_path=\"plots/price_dist.png\")\nplot_price_vs_bedrooms(df, save_path=\"plots/price_bed.png\")"
-  },
-  {
-    "objectID": "tutorial.html#step-6-launch-dashboard",
-    "href": "tutorial.html#step-6-launch-dashboard",
-    "title": "Tutorial — Using BnBInsight",
-    "section": "Step 6 — Launch Dashboard",
-    "text": "Step 6 — Launch Dashboard\nstreamlit run app/streamlit_app.py"
-  },
-  {
     "objectID": "report.html",
     "href": "report.html",
     "title": "Final Report — Airbnb Pricing Analysis",
@@ -145,5 +61,124 @@
     "title": "Final Report — Airbnb Pricing Analysis",
     "section": "References",
     "text": "References\n\nInside Airbnb / Kaggle listings datasets\nAirROI API documentation\nstatsmodels OLS regression"
+  },
+  {
+    "objectID": "report.html#explore-further",
+    "href": "report.html#explore-further",
+    "title": "Final Report — Airbnb Pricing Analysis",
+    "section": "Explore Further",
+    "text": "Explore Further\n\n\n\nResource\nURL\n\n\n\n\nGitHub Repository\ngithub.com/mbgardin/BnBInsight\n\n\nLive Streamlit Dashboard\nbnbinsight.streamlit.app\n\n\nPyPI Package\npypi.org/project/bnbinsight"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "BnBInsight",
+    "section": "",
+    "text": "BnBInsight is a Python package that demonstrates the full data-science pipeline for analysing short-term rental pricing on Airbnb.\nThe package lets you:\n\nCollect raw listing data from a Kaggle CSV and the AirROI API\nClean messy price, rating, and bedroom columns\nEngineer features like amenities count and log-price\nAnalyse pricing drivers with OLS regression\nVisualise distributions and relationships\nExplore results interactively via a Streamlit dashboard"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "BnBInsight",
+    "section": "",
+    "text": "BnBInsight is a Python package that demonstrates the full data-science pipeline for analysing short-term rental pricing on Airbnb.\nThe package lets you:\n\nCollect raw listing data from a Kaggle CSV and the AirROI API\nClean messy price, rating, and bedroom columns\nEngineer features like amenities count and log-price\nAnalyse pricing drivers with OLS regression\nVisualise distributions and relationships\nExplore results interactively via a Streamlit dashboard"
+  },
+  {
+    "objectID": "index.html#hypothesis",
+    "href": "index.html#hypothesis",
+    "title": "BnBInsight",
+    "section": "Hypothesis",
+    "text": "Hypothesis\n\nListings with more bedrooms, higher ratings, and more amenities have significantly higher nightly prices.\n\nModel: log_price ~ bedrooms + rating + amenities_count"
+  },
+  {
+    "objectID": "index.html#install-from-pypi",
+    "href": "index.html#install-from-pypi",
+    "title": "BnBInsight",
+    "section": "Install from PyPI",
+    "text": "Install from PyPI\nThe easiest way to use BnBInsight is to install it directly from PyPI:\npython -m venv myenv\nsource myenv/bin/activate        # macOS / Linux\n# myenv\\Scripts\\activate         # Windows\n\npip install bnbinsight\n\npython -c \"import bnbinsight; print('works')\""
+  },
+  {
+    "objectID": "index.html#quick-start-from-source",
+    "href": "index.html#quick-start-from-source",
+    "title": "BnBInsight",
+    "section": "Quick Start (from source)",
+    "text": "Quick Start (from source)\ngit clone https://github.com/mbgardin/BnBInsight.git\ncd BnBInsight\npip install -e .\n\npython scripts/clean_data.py\npython scripts/run_analysis.py\nstreamlit run app/streamlit_app.py"
+  },
+  {
+    "objectID": "index.html#links",
+    "href": "index.html#links",
+    "title": "BnBInsight",
+    "section": "Links",
+    "text": "Links\n\n\n\nResource\nURL\n\n\n\n\nGitHub Repository\ngithub.com/mbgardin/BnBInsight\n\n\nLive Streamlit Dashboard\nbnbinsight.streamlit.app\n\n\nPyPI Package\npypi.org/project/bnbinsight\n\n\n\n\nSee the Tutorial for a step-by-step walkthrough, or jump straight to the Report for findings."
+  },
+  {
+    "objectID": "tutorial.html",
+    "href": "tutorial.html",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "",
+    "text": "The package is published on PyPI and can be installed with pip:\n# 1. Create & activate a virtual environment\npython -m venv myenv\nsource myenv/bin/activate        # macOS / Linux\n# myenv\\Scripts\\activate         # Windows\n\n# 2. Install\npip install bnbinsight\n\n# 3. Verify\npython -c \"import bnbinsight; print('works')\""
+  },
+  {
+    "objectID": "tutorial.html#option-a-install-from-pypi-recommended",
+    "href": "tutorial.html#option-a-install-from-pypi-recommended",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "",
+    "text": "The package is published on PyPI and can be installed with pip:\n# 1. Create & activate a virtual environment\npython -m venv myenv\nsource myenv/bin/activate        # macOS / Linux\n# myenv\\Scripts\\activate         # Windows\n\n# 2. Install\npip install bnbinsight\n\n# 3. Verify\npython -c \"import bnbinsight; print('works')\""
+  },
+  {
+    "objectID": "tutorial.html#option-b-install-from-source",
+    "href": "tutorial.html#option-b-install-from-source",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Option B — Install from source",
+    "text": "Option B — Install from source\ngit clone https://github.com/mbgardin/BnBInsight.git\ncd BnBInsight\npip install -e ."
+  },
+  {
+    "objectID": "tutorial.html#step-1-load-data",
+    "href": "tutorial.html#step-1-load-data",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 1 — Load Data",
+    "text": "Step 1 — Load Data\nfrom bnbinsight.data_collection import load_kaggle_data\n\ndf = load_kaggle_data(\"data/raw/kaggle_airbnb.csv\")\nprint(df.shape)\nprint(df.columns.tolist())"
+  },
+  {
+    "objectID": "tutorial.html#step-2-clean-data",
+    "href": "tutorial.html#step-2-clean-data",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 2 — Clean Data",
+    "text": "Step 2 — Clean Data\nfrom bnbinsight.cleaning import (\n    clean_price_column,\n    clean_rating_column,\n    clean_bedrooms_column,\n    drop_duplicates_and_nulls,\n    filter_reasonable_prices,\n)\n\ndf = clean_price_column(df)\ndf = clean_rating_column(df)\ndf = clean_bedrooms_column(df)\ndf = drop_duplicates_and_nulls(df)\ndf = filter_reasonable_prices(df)\nprint(f\"Clean rows: {len(df)}\")"
+  },
+  {
+    "objectID": "tutorial.html#step-3-engineer-features",
+    "href": "tutorial.html#step-3-engineer-features",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 3 — Engineer Features",
+    "text": "Step 3 — Engineer Features\nfrom bnbinsight.features import parse_amenities_count, create_log_price\n\ndf = parse_amenities_count(df)\ndf = create_log_price(df)\nprint(df[[\"price\", \"log_price\", \"bedrooms\", \"rating\", \"amenities_count\"]].head())"
+  },
+  {
+    "objectID": "tutorial.html#step-4-run-analysis",
+    "href": "tutorial.html#step-4-run-analysis",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 4 — Run Analysis",
+    "text": "Step 4 — Run Analysis\nfrom bnbinsight.analysis import run_linear_regression, evaluate_model\nfrom bnbinsight.features import select_model_features\n\nmodel_df = select_model_features(df)\nmodel = run_linear_regression(model_df)\nprint(model.summary())\nprint(evaluate_model(model))"
+  },
+  {
+    "objectID": "tutorial.html#step-5-visualize",
+    "href": "tutorial.html#step-5-visualize",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 5 — Visualize",
+    "text": "Step 5 — Visualize\nfrom bnbinsight.visualization import plot_price_distribution, plot_price_vs_bedrooms\n\nplot_price_distribution(df, save_path=\"plots/price_dist.png\")\nplot_price_vs_bedrooms(df, save_path=\"plots/price_bed.png\")"
+  },
+  {
+    "objectID": "tutorial.html#step-6-launch-dashboard",
+    "href": "tutorial.html#step-6-launch-dashboard",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Step 6 — Launch Dashboard",
+    "text": "Step 6 — Launch Dashboard\nYou can run the dashboard locally:\npip install bnbinsight[app]   # includes streamlit\nstreamlit run app/streamlit_app.py\nOr visit the live deployment at bnbinsight.streamlit.app."
+  },
+  {
+    "objectID": "tutorial.html#links",
+    "href": "tutorial.html#links",
+    "title": "Tutorial — Using BnBInsight",
+    "section": "Links",
+    "text": "Links\n\n\n\nResource\nURL\n\n\n\n\nGitHub Repository\ngithub.com/mbgardin/BnBInsight\n\n\nLive Streamlit Dashboard\nbnbinsight.streamlit.app\n\n\nPyPI Package\npypi.org/project/bnbinsight"
   }
 ]

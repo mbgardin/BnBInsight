@@ -82,3 +82,13 @@ The regression analysis demonstrates that bedrooms, ratings, and amenities are s
 - Inside Airbnb / Kaggle listings datasets
 - AirROI API documentation
 - statsmodels OLS regression
+
+---
+
+## Explore Further
+
+| Resource | URL |
+|---|---|
+| **GitHub Repository** | [github.com/mbgardin/BnBInsight](https://github.com/mbgardin/BnBInsight) |
+| **Live Streamlit Dashboard** | [bnbinsight.streamlit.app](https://bnbinsight.streamlit.app/) |
+| **PyPI Package** | [pypi.org/project/bnbinsight](https://pypi.org/project/bnbinsight/) |

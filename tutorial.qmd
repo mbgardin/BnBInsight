@@ -2,13 +2,32 @@
 title: "Tutorial — Using BnBInsight"
 ---
 
-## Installation
+## Option A — Install from PyPI (recommended)
+
+The package is published on [PyPI](https://pypi.org/project/bnbinsight/) and can be installed with `pip`:
+
+```bash
+# 1. Create & activate a virtual environment
+python -m venv myenv
+source myenv/bin/activate        # macOS / Linux
+# myenv\Scripts\activate         # Windows
+
+# 2. Install
+pip install bnbinsight
+
+# 3. Verify
+python -c "import bnbinsight; print('works')"
+```
+
+## Option B — Install from source
 
 ```bash
 git clone https://github.com/mbgardin/BnBInsight.git
 cd BnBInsight
 pip install -e .
 ```
+
+---
 
 ## Step 1 — Load Data
 
@@ -72,6 +91,21 @@ plot_price_vs_bedrooms(df, save_path="plots/price_bed.png")
 
 ## Step 6 — Launch Dashboard
 
+You can run the dashboard locally:
+
 ```bash
+pip install bnbinsight[app]   # includes streamlit
 streamlit run app/streamlit_app.py
 ```
+
+Or visit the **live deployment** at [bnbinsight.streamlit.app](https://bnbinsight.streamlit.app/).
+
+---
+
+## Links
+
+| Resource | URL |
+|---|---|
+| **GitHub Repository** | [github.com/mbgardin/BnBInsight](https://github.com/mbgardin/BnBInsight) |
+| **Live Streamlit Dashboard** | [bnbinsight.streamlit.app](https://bnbinsight.streamlit.app/) |
+| **PyPI Package** | [pypi.org/project/bnbinsight](https://pypi.org/project/bnbinsight/) |

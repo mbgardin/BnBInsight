@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - tutorial.qmd
+    - report.qmd
 
 website:
   title: "BnBInsight"
@@ -12,6 +16,16 @@ website:
         text: Tutorial
       - href: report.qmd
         text: Report
+    right:
+      - icon: github
+        href: https://github.com/mbgardin/BnBInsight
+        text: GitHub
+      - icon: box-arrow-up-right
+        href: https://bnbinsight.streamlit.app/
+        text: Streamlit
+      - icon: box-seam
+        href: https://pypi.org/project/bnbinsight/
+        text: PyPI
 
 format:
   html:

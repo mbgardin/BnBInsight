@@ -137,6 +137,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Report</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/mbgardin/BnBInsight"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://bnbinsight.streamlit.app/"> <i class="bi bi-box-arrow-up-right" role="img">
+</i> 
+<span class="menu-text">Streamlit</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://pypi.org/project/bnbinsight/"> <i class="bi bi-box-seam" role="img">
+</i> 
+<span class="menu-text">PyPI</span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
@@ -154,7 +171,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#hypothesis" id="toc-hypothesis" class="nav-link" data-scroll-target="#hypothesis">Hypothesis</a></li>
-  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick Start</a></li>
+  <li><a href="#install-from-pypi" id="toc-install-from-pypi" class="nav-link" data-scroll-target="#install-from-pypi">Install from PyPI</a></li>
+  <li><a href="#quick-start-from-source" id="toc-quick-start-from-source" class="nav-link" data-scroll-target="#quick-start-from-source">Quick Start (from source)</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   </ul>
 </nav>
     </div>
@@ -200,14 +219,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Listings with more bedrooms, higher ratings, and more amenities have significantly higher nightly prices.</p>
 </blockquote>
 <p><strong>Model:</strong> <code>log_price ~ bedrooms + rating + amenities_count</code></p>
+<hr>
 </section>
-<section id="quick-start" class="level2">
-<h2 class="anchored" data-anchor-id="quick-start">Quick Start</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> .</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/clean_data.py</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/run_analysis.py</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run app/streamlit_app.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>See the <a href="./tutorial.html">Tutorial</a> for a step-by-step walkthrough.</p>
+<section id="install-from-pypi" class="level2">
+<h2 class="anchored" data-anchor-id="install-from-pypi">Install from PyPI</h2>
+<p>The easiest way to use BnBInsight is to install it directly from <a href="https://pypi.org/project/bnbinsight/">PyPI</a>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv myenv</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> myenv/bin/activate        <span class="co"># macOS / Linux</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># myenv\Scripts\activate         # Windows</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install bnbinsight</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import bnbinsight; print('works')"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="quick-start-from-source" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start-from-source">Quick Start (from source)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/mbgardin/BnBInsight.git</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> BnBInsight</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> .</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/clean_data.py</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> scripts/run_analysis.py</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">streamlit</span> run app/streamlit_app.py</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Resource</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>GitHub Repository</strong></td>
+<td><a href="https://github.com/mbgardin/BnBInsight">github.com/mbgardin/BnBInsight</a></td>
+</tr>
+<tr class="even">
+<td><strong>Live Streamlit Dashboard</strong></td>
+<td><a href="https://bnbinsight.streamlit.app/">bnbinsight.streamlit.app</a></td>
+</tr>
+<tr class="odd">
+<td><strong>PyPI Package</strong></td>
+<td><a href="https://pypi.org/project/bnbinsight/">pypi.org/project/bnbinsight</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>See the <a href="./tutorial.html">Tutorial</a> for a step-by-step walkthrough, or jump straight to the <a href="./report.html">Report</a> for findings.</p>
 
 
 </section>
