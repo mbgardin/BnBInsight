@@ -24,7 +24,7 @@ Thumbs.db
 
 # Data (keep raw data in repo, ignore generated processed files)
 # data/raw/ files are tracked so API doesn't need re-calling
-data/processed/*.csv
+# data/processed/*.csv
 
 # Quarto
 docs/_site/
