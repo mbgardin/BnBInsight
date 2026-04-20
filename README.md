@@ -17,7 +17,7 @@
 
 ---
 
-## 📊 Data Sources
+## Data Sources
 
 | Source | Purpose |
 |---|---|
@@ -26,7 +26,7 @@
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Clone the repo
@@ -42,7 +42,7 @@ pip install -e .
 
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 ```
 airbnb-pricing-project/
@@ -71,7 +71,7 @@ airbnb-pricing-project/
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### 1. Place your data
 
@@ -104,7 +104,7 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 🧪 Run Tests
+## Run Tests
 
 ```bash
 python -m pytest tests/
@@ -112,14 +112,14 @@ python -m pytest tests/
 
 ---
 
-## 📖 Documentation
+## Documentation
 
 Full documentation (built with Quarto) is available on GitHub Pages:
 
-👉 **[https://YOUR_USERNAME.github.io/airbnb-pricing-project/](https://YOUR_USERNAME.github.io/airbnb-pricing-project/)**
+**[https://mbgardin.github.io/BnBInsight/](https://mbgardin.github.io/BnBInsight/)**
 
 ---
 
-## 📄 License
+## License
 
 This project is for educational purposes (BYU STAT 386).
